@@ -1,0 +1,4 @@
+#ifdef (EnableTreble==1); 
+#include <%USERPROFILE%\Documents\Rainmeter\Skins\Kenwood_concept\@Resources\Sound\1\7L-Treble.inf>
+#define EnableTreble=1
+#endif 

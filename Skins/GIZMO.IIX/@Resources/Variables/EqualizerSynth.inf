@@ -1,0 +1,453 @@
+[Rainmeter]
+Update=10
+OnRefreshAction=[]
+MouseActionCursorName=nes.ani
+DynamicWindowSize=1
+AccurateText=1
+SkinPath=%UserProfile%\Documents\GitHub\Rainmeter.7L.9\Skins\
+
+[Variables]
+@include=#@#\Variables\bg.inf
+Nir=#@#\nircmd.exe
+Notch0=200000000000
+fade=255
+Yup=4
+Key-=Minus
+Key+=Plus
+KeyAd1=0x27
+KeyAd2=0x25
+KeyAd3=0x67
+KeyAd4=0x64
+KeyAd5=0x68
+KeyAd6=0x65
+KeyAd7=0x69
+KeyAd8=0x66
+Divise=2
+Source=1
+MeasureADD1=MeasureSixty1
+MeasureADD2=MeasureTwoTwenty2
+MeasureADD3=MeasureBalance1
+
+[MeasureWin7Audio]
+Plugin=MeasureWin7Audio
+
+[MeasureRun1]
+Measure=Plugin
+Plugin=RunCommand
+Program="%UserProfile%\Documents\GitHub\Rainmeter.7L.9\Skins\GIZMO.IIX\@Resources\Variables\1.exe"
+State=Hide
+OutputType=UTF8
+
+[MeasureRun2]
+Measure=Plugin
+Plugin=RunCommand
+Program="%UserProfile%\Documents\GitHub\Rainmeter.7L.9\Skins\GIZMO.IIX\@Resources\Variables\2.exe"
+State=Hide
+OutputType=UTF8
+
+[MeasureRun3]
+Measure=Plugin
+Plugin=RunCommand
+Program="%UserProfile%\Documents\GitHub\Rainmeter.7L.9\Skins\GIZMO.IIX\@Resources\Variables\3.exe"
+State=Hide
+
+[MeasureRun4]
+Measure=Plugin
+Plugin=RunCommand
+Program="%UserProfile%\Documents\GitHub\Rainmeter.7L.9\Skins\GIZMO.IIX\@Resources\Variables\4.exe"
+State=Hide
+OutputType=UTF8
+
+[MeasureRun5]
+Measure=Plugin
+Plugin=RunCommand
+Program="%UserProfile%\Documents\GitHub\Rainmeter.7L.9\Skins\GIZMO.IIX\@Resources\Variables\5.exe"
+State=Hide
+OutputType=UTF8
+
+[MeasureRun6]
+Measure=Plugin
+Plugin=RunCommand
+Program="%UserProfile%\Documents\GitHub\Rainmeter.7L.9\Skins\GIZMO.IIX\@Resources\Variables\6.exe"
+State=Hide
+OutputType=UTF8
+
+[MeasureRun7]
+Measure=Plugin
+Plugin=RunCommand
+Program="%UserProfile%\Documents\GitHub\Rainmeter.7L.9\Skins\GIZMO.IIX\@Resources\Variables\7.exe"
+State=Hide
+OutputType=UTF8
+
+[Right]
+Measure=Plugin
+Plugin=HotKey
+HotKey=#KeyAd1#
+KeyDownAction=[!SetOption #MeasureAdjust# Formula "[#MeasureAdjust#]+#MeasureAdjust2#"][!UpdateMeasure MeasureAdjust][!Update][!Redraw]
+KeyUpAction=[!Update][!Redraw]
+
+[Left]
+Measure=Plugin
+Plugin=HotKey
+HotKey=#KeyAd2#
+KeyDownAction=[!SetOption #MeasureAdjust# Formula "[#MeasureAdjust#]-#MeasureAdjust2#"][!UpdateMeasure MeasureAdjust][!Update][!Redraw]
+KeyUpAction=[!Update][!Redraw]
+
+[RightSixty]
+Measure=Plugin
+Plugin=HotKey
+HotKey=#KeyAd3#
+KeyDownAction=[!SetOption #MeasureADD1# Formula "[#MeasureADD1#]+4"][!UpdateMeasure #MeasureADD1#][!Update][!Redraw]
+KeyUpAction=[!Update][!Redraw]
+
+[LeftSixty]
+Measure=Plugin
+Plugin=HotKey
+HotKey=#KeyAd4#
+KeyDownAction=[!SetOption #MeasureADD1# Formula "[#MeasureADD1#]-4"][!UpdateMeasure #MeasureADD1#][!Update][!Redraw]
+KeyUpAction=[!Update][!Redraw]
+
+
+[RightTwo]
+Measure=Plugin
+Plugin=HotKey
+HotKey=#KeyAd5#
+KeyDownAction=[!SetOption #MeasureADD2# Formula "[#MeasureADD2#]+10"][!UpdateMeasure #MeasureADD2#][!Update][!Redraw]
+KeyUpAction=[!Update][!Redraw]
+
+[LeftTwo]
+Measure=Plugin
+Plugin=HotKey
+HotKey=#KeyAd6#
+KeyDownAction=[!SetOption #MeasureADD2# Formula "[#MeasureADD2#]-10"][!UpdateMeasure #MeasureADD2#][!Update][!Redraw]
+KeyUpAction=[!Update][!Redraw]
+
+[RightFade]
+Measure=Plugin
+Plugin=HotKey
+HotKey=#KeyAd7#
+KeyDownAction=[!SetOption #MeasureADD3# Formula "[#MeasureADD3#]+5"][!UpdateMeasure #MeasureADD3#][!Update][!Redraw]
+KeyUpAction=[!Update][!Redraw]
+
+[LeftFade]
+Measure=Plugin
+Plugin=HotKey
+HotKey=#KeyAd8#
+KeyDownAction=[!SetOption #MeasureADD3# Formula "[#MeasureADD3#]-5"][!UpdateMeasure #MeasureADD3#][!Update][!Redraw]
+KeyUpAction=[!Update][!Redraw]
+
+[HotkeyVolume-]
+Measure=Plugin
+Plugin=HotKey
+HotKey=#Key-#
+KeyDownAction=[!CommandMeasure "MeasureWin7Audio" "ChangeVolume -2"][!SetOption VOL Formula "[VOL]-2"][!Update][!Redraw]
+KeyUpAction=[!Update][!Redraw]
+
+[HotkeyVolume+]
+Measure=Plugin
+Plugin=HotKey
+HotKey=#Key+#
+KeyDownAction=[!CommandMeasure "MeasureWin7Audio" "ChangeVolume +2"][!SetOption VOL Formula "[VOL]+2"][!Update][!Redraw]
+KeyUpAction=[!Update][!Redraw]
+
+[Dynamic]
+DynamicVariable=1
+AntiAlias=1
+
+[Transition]
+Measure=Calc
+MinValue=1
+MaxValue=21
+IfCondition=Transition=1
+IfTrueAction=[#@#\Programs\nircmd.exe setsysvolume2 "60000" "10000"]
+IfCondition2=Transition=2
+IfTrueAction2=[#@#\Programs\nircmd.exe setsysvolume2 "60000" "15000"]
+IfCondition3=Transition=3
+IfTrueAction3=[#@#\Programs\nircmd.exe setsysvolume2 "60000" "20000"]
+IfCondition4=Transition=4
+IfTrueAction4=[#@#\Programs\nircmd.exe setsysvolume2 "60000" "25000"]
+IfCondition5=Transition=5
+IfTrueAction5=[#@#\Programs\nircmd.exe setsysvolume2 "60000" "30000"]
+IfCondition6=Transition=6
+IfTrueAction6=[#@#\Programs\nircmd.exe setsysvolume2 "60000" "35000"]
+IfCondition7=Transition=7
+IfTrueAction7=[#@#\Programs\nircmd.exe setsysvolume2 "60000" "40000"]
+IfCondition8=Transition=8
+IfTrueAction8=[#@#\Programs\nircmd.exe setsysvolume2 "60000" "45000"]
+IfCondition9=Transition=9
+IfTrueAction9=[#@#\Programs\nircmd.exe setsysvolume2 "60000" "50000"]
+IfCondition10=Transition=10
+IfTrueAction10=[#@#\Programs\nircmd.exe setsysvolume2 "60000" "55000"]
+IfCondition11=Transition=11
+IfTrueAction11=[#@#\Programs\nircmd.exe setsysvolume2 "60000" "60000"]
+IfCondition12=Transition=12
+IfTrueAction12=[#@#\Programs\nircmd.exe setsysvolume2 "55000" "60000"]
+IfCondition13=Transition=13
+IfTrueAction13=[#@#\Programs\nircmd.exe setsysvolume2 "50000" "60000"]
+IfCondition14=Transition=14
+IfTrueAction14=[#@#\Programs\nircmd.exe setsysvolume2 "45000" "60000"]
+IfCondition15=Transition=15
+IfTrueAction15=[#@#\Programs\nircmd.exe setsysvolume2 "40000" "60000"]
+IfCondition16=Transition=16
+IfTrueAction16=[#@#\Programs\nircmd.exe setsysvolume2 "35000" "60000"]
+IfCondition17=Transition=17
+IfTrueAction17=[#@#\Programs\nircmd.exe setsysvolume2 "30000" "60000"]
+IfCondition18=Transition=18
+IfTrueAction18=[#@#\Programs\nircmd.exe setsysvolume2 "25000" "60000"]
+IfCondition19=Transition=19
+IfTrueAction19=[#@#\Programs\nircmd.exe setsysvolume2 "20000" "60000"]
+IfCondition20=Transition=20
+IfTrueAction20=[#@#\Programs\nircmd.exe setsysvolume2 "15000" "60000"]
+IfCondition21=Transition=21
+IfTrueAction21=[#@#\Programs\nircmd.exe setsysvolume2 "10000" "60000"]
+OnUpdateAction=[!UpdateMeter Transition][!Redraw]
+Formula=11
+
+[MeasureBalance1]
+Measure=Calc
+MinValue=0
+MaxValue=200
+Formula=100
+
+[MeasureLow1]
+Measure=Calc
+MinValue=-100000
+MaxValue=5500000000000
+Formula=2590000000000
+
+[MeasureHigh2]
+Measure=Calc
+MinValue=-100000
+MaxValue=5500000000000
+Formula=2590000000000
+
+[MeasureSixty1]
+Measure=Calc
+MinValue=30
+MaxValue=85
+Formula=60
+
+[MeasureTwoTwenty2]
+Measure=Calc
+MinValue=390
+MaxValue=600
+Formula=400
+
+[Balance2]
+ImageName=#@#\Images\Knob0.png
+DynamicVariable=1
+OffsetX=25.4
+OffsetY=25.4
+StartAngle=3.95
+RotationAngle=4.698
+ImageTint=120,120,120,#fade#
+Group=Synth
+X=867
+Y=(47+#Yup#)
+W=54
+H=54
+
+[Volume]
+ImageName=#@#\Images\Knob0.png
+DynamicVariable=1
+OffsetX=25.4
+OffsetY=25.4
+StartAngle=3.95
+RotationAngle=4.698
+ImageTint=180,180,180,#fade#
+Group=Synth
+X=50r
+Y=r
+W=54
+H=54
+
+[Base]
+ImageName=#@#\Images\Knob0.png
+DynamicVariable=1
+OffsetX=25.4
+OffsetY=25.4
+StartAngle=3.95
+RotationAngle=4.698
+ImageTint=120,120,120,#fade#
+Group=Synth
+X=50r
+Y=r
+W=54
+H=54
+
+[Mid-Treble]
+ImageName=#@#\Images\Knob0.png
+DynamicVariable=1
+OffsetX=25.4
+OffsetY=25.4
+StartAngle=3.95
+RotationAngle=4.698
+ImageTint=150,150,150,#fade#
+Group=Synth
+X=50r
+Y=r
+W=54
+H=54
+
+[Transition2]
+ImageName=#@#\Images\Knob0.png
+DynamicVariable=1
+OffsetX=25.4
+OffsetY=25.4
+StartAngle=3.95
+RotationAngle=4.698
+ImageTint=120,120,120,#fade#
+Group=Synth
+X=918
+Y=(#Yup#-1.5)
+W=54
+H=54
+
+[Power1]
+ImageName=#@#\Images\Knob0.png
+DynamicVariable=1
+OffsetX=25.4
+OffsetY=25.4
+StartAngle=3.95
+RotationAngle=4.698
+ImageTint=120,120,120,#fade#
+Group=Synth
+X=(918+50)
+Y=(#Yup#-1.5)
+W=54
+H=54
+
+[Power2]
+ImageName=#@#\Images\Knob0.png
+DynamicVariable=1
+OffsetX=25.4
+OffsetY=25.4
+StartAngle=3.95
+RotationAngle=4.698
+ImageTint=150,150,150,#fade#
+Group=Synth
+X=(918+50+50)
+Y=(#Yup#-1.5)
+W=54
+H=54
+
+[BaseNote]
+Meter=Image
+ImageName=#@#\Images\Base.png
+DynamicVariable=1
+ImageTint=110,33,10,#fade#
+Hidden=0
+Group=Synth
+X=(918+43)
+Y=(44)
+W=20
+H=20
+
+[TrebleNote]
+Meter=Image
+ImageName=#@#\Images\Treble.png
+DynamicVariable=1
+ImageTint=110,53,50,#fade#
+Hidden=0
+Group=Synth
+X=(918+50+38)
+Y=(44)
+W=20
+H=20
+
+[MeasureWin7Audio]
+Measure=Plugin
+Plugin=Win7AudioPlugin
+
+[MeterTransition]
+Meter=Rotator
+MeterStyle=Transition2
+MeasureName=Transition
+;LeftMouseUpAction=["#@#\Variables\1.exe"][!CommandMeasure MeasureRun1 "Run"][!Delay 700][!Refresh]
+MouseScrollUpAction=[!SetOption Transition Formula "([Transition]+1)"][!Delay 100][!Update][!Redraw]
+MouseScrollDownAction=[!SetOption Transition Formula "([Transition]-1)"][!Delay 100][!Update][!Redraw]
+Hidden=0
+Group=Synth
+AntiAlias=1
+
+[MeterFADER]
+Meter=Rotator
+MeterStyle=FADER2
+MeasureName=FADER
+LeftMouseUpAction=["#@#\Variables\1.exe"][!CommandMeasure MeasureRun1 "Run"][!Delay 700][!Refresh]
+MouseScrollUpAction=[!SetOption FADER Formula "[FADER]+59"][!SetVariable fade "[FADER]"][!Update][!Redraw]
+MouseScrollDownAction=[!SetOption FADER Formula "[FADER]-59"][!SetVariable fade "[FADER]"][!Update][!Redraw]
+Hidden=0
+Group=Synth
+AntiAlias=1
+
+[MeterLow1]
+Meter=Rotator
+MeterStyle=Power1
+MeasureName=MeasureLow1
+LeftMouseUpAction=["#@#\Variables\2.exe"][!CommandMeasure MeasureRun2 "Run"][!Delay 700][!Refresh]
+MouseScrollUpAction=[!SetOption MeasureLow1 Formula "[MeasureLow1]+#Notch0#"][!Update][!Redraw]
+MouseScrollDownAction=[!SetOption MeasureLow1 Formula "[MeasureLow1]-#Notch0#"][!Update][!Redraw]
+Hidden=0
+Group=Synth
+AntiAlias=1
+
+[MeterHigh2]
+Meter=Rotator
+MeterStyle=Power2
+MeasureName=MeasureHigh2
+LeftMouseUpAction=["#@#\Variables\3.exe"][!CommandMeasure MeasureRun3 "Run"][!Delay 700][!Refresh]
+MouseScrollUpAction=[!SetOption MeasureHigh2 Formula "[MeasureHigh2]+#Notch0#"][!Update][!Redraw]
+MouseScrollDownAction=[!SetOption MeasureHigh2 Formula "[MeasureHigh2]-#Notch0#"][!Update][!Redraw]
+Hidden=0
+Group=Synth
+AntiAlias=1
+
+[MeterBalance]
+Meter=Rotator
+MeterStyle=Balance2
+MeasureName=MeasureBalance1
+LeftMouseUpAction=["#@#\Variables\4.exe"][!CommandMeasure MeasureRun4 "Run"][!Delay 700][!Refresh]
+MouseScrollUpAction=[!SetOption MeasureBalance1 Formula "[MeasureBalance1]+12"][!Update][!Redraw]
+MouseScrollDownAction=[!SetOption MeasureBalance1 Formula "[MeasureBalance1]-12"][!Update][!Redraw]
+Hidden=0
+Group=Synth
+AntiAlias=1
+
+[MeterVolume]
+Meter=Rotator
+MeterStyle=Volume
+MeasureName=MeasureWin7Audio
+LeftMouseUpAction=["#@#\Variables\5.exe"][!CommandMeasure MeasureRun5 "Run"][!Delay 700][!Refresh]
+MouseScrollUpAction=[!CommandMeasure "MeasureWin7Audio" "ChangeVolume +2"][!CommandMeasure "VOL" "[VOL]+2"][!Update][!Redraw]
+MouseScrollDownAction=[!CommandMeasure "MeasureWin7Audio" "ChangeVolume -2"][!CommandMeasure "VOL" "[VOL]+2"][!Update][!Redraw]
+Hidden=0
+Group=Synth
+AntiAlias=1
+
+[MeterSixty1]
+Meter=Rotator
+MeterStyle=Base
+MeasureName=MeasureSixty1
+LeftMouseUpAction=["#@#\Variables\6.exe"][!CommandMeasure MeasureRun6 "Run"][!Delay 700][!Refresh]
+MouseScrollUpAction=[!SetOption MeasureSixty1 Formula "[MeasureSixty1]+1.5"][!Update][!Redraw]
+MouseScrollDownAction=[!SetOption MeasureSixty1 Formula "[MeasureSixty1]-1.5"][!Update][!Redraw]
+Hidden=0
+Group=Synth
+AntiAlias=1
+
+[MeterTwoTwenty2]
+Meter=Rotator
+MeterStyle=Mid-Treble
+MeasureName=MeasureTwoTwenty2
+LeftMouseUpAction=["#@#\Variables\7.exe"][!CommandMeasure MeasureRun7 "Run"][!Delay 700][!Refresh]
+MouseScrollUpAction=[!SetOption MeasureTwoTwenty2 Formula "[MeasureTwoTwenty2]+10"][!Update][!Redraw]
+MouseScrollDownAction=[!SetOption MeasureTwoTwenty2 Formula "[MeasureTwoTwenty2]-10"][!Update][!Redraw]
+Hidden=0
+Group=Synth
+AntiAlias=1
+
+[FORMULA_MP3_ARITST]
+Measure=Calc
+bitrate=[MeasureLow1][0]<[Balance]>[200][MeasureLow2] | ([MeasureLow1]<->[MeasureHigh2]) | ([MeasureSixty1],85,[MeasureTwoTwenty2],600,1000,2400);
+Volume=(100*([MeasureLow1]+[MeasureHigh2])*([MeasureLow1]<->[MeasureHigh2])))

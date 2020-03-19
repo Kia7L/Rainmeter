@@ -1,0 +1,408 @@
+[Rainmeter]
+Update=10
+OnRefreshAction=[]
+MouseActionCursorName=nes.ani
+
+[Variables]
+@include=#@#\Variables\EqualizerSynth.inf
+Nir=#@#\nircmd.exe
+Key1=Plus
+Key2=Minus
+Source=VOL
+Notcha=10
+Notchb=1
+Red2=255%
+Green2=200%
+Blue2=12%
+Bright2=240%
+Shadow2=10%
+Blure2=42%
+Sharp2=255%
+Pixel2=1%
+Enhanced2=255%
+xx=6920
+yy=6080
+
+[Hotkey1]
+Measure=Plugin
+Plugin=HotKey
+HotKey=#Key1#
+KeyDownAction=[!SetOption #Source# Formula "[#Source#]-2"][!Update][!Redraw]
+KeyUpAction=[!Update][!Redraw]
+
+[Hotkey2]
+Measure=Plugin
+Plugin=HotKey
+HotKey=#Key2#
+KeyDownAction=[!SetOption #Source# Formula "[#Source#]+2"][!Update][!Redraw]
+KeyUpAction=[!Update][!Redraw]
+
+[Dynamic]
+DynamicVariables=1
+AntiAlias=1
+
+[Blure2]
+Measure=Calc
+MinValue=0
+MaxValue=255
+Formula=#Blure2#
+IfBelowValue=0
+IfBelowAction=[!SetOption Blure2 Formula "0"][!Update][!Redraw]
+IfAboveValue=255
+IfAboveAction=[!SetOption Blure2 Formula "255"][!Update][!Redraw]
+
+[Sharp2]
+Measure=Calc
+MinValue=0
+MaxValue=255
+Formula=#Sharp2#
+IfBelowValue=0
+IfBelowAction=[!SetOption Sharp2 Formula "0"][!Update][!Redraw]
+IfAboveValue=255
+IfAboveAction=[!SetOption Sharp2 Formula "255"][!Update][!Redraw]
+
+[Balance2]
+Measure=Calc
+MinValue=0
+MaxValue=200
+Formula=#Balanc2#
+IfBelowValue=0
+IfBelowAction=[!SetOption Balance2 Formula "0"][!Update][!Redraw]
+IfAboveValue=200
+IfAboveAction=[!SetOption Balance2 Formula "200"][!Update][!Redraw]
+
+[Fader2]
+Measure=Calc
+MinValue=0
+MaxValue=255
+Formula=#Fader2#
+IfBelowValue=0
+IfBelowAction=[!SetOption Fader2 Formula "0"][!Update][!Redraw]
+IfAboveValue=255
+IfAboveAction=[!SetOption Fader2 Formula "255"][!Update][!Redraw]
+
+[Bright2]
+Measure=Calc
+MinValue=0
+MaxValue=200
+Formula=#Bright2#
+IfBelowValue=0
+IfBelowAction=[!SetOption Bright2 Formula "0"][!Update][!Redraw]
+IfAboveValue=200
+IfAboveAction=[!SetOption Bright2 Formula "200"][!Update][!Redraw]
+
+[Shadow2]
+Measure=Calc
+MinValue=0
+MaxValue=255
+Formula=#Shadow2#
+IfBelowValue=0
+IfBelowAction=[!SetOption Shadow2 Formula "0"][!Update][!Redraw]
+IfAboveValue=255
+IfAboveAction=[!SetOption Shadow2 Formula "255"][!Update][!Redraw]
+
+[Red2]
+Measure=Calc
+MinValue=0
+MaxValue=255
+Formula=#Red2#
+IfBelowValue=0
+IfBelowAction=[!SetOption Red2 Formula "0"][!Update][!Redraw]
+IfAboveValue=255
+IfAboveAction=[!SetOption Red2 Formula "255"][!Update][!Redraw]
+
+[Green2]
+Measure=Calc
+MinValue=0
+MaxValue=255
+Formula=#Green2#
+IfBelowValue=0
+IfBelowAction=[!SetOption Green2 Formula "0"][!Update][!Redraw]
+IfAboveValue=255
+IfAboveAction=[!SetOption Green2 Formula "255"][!Update][!Redraw]
+
+[Blue2]
+Measure=Calc
+MinValue=0
+MaxValue=255
+Formula=#Blue2#
+IfBelowValue=0
+IfBelowAction=[!SetOption Blue2 Formula "0"][!Update][!Redraw]
+IfAboveValue=255
+IfAboveAction=[!SetOption Blue2 Formula "255"][!Update][!Redraw]
+
+[Enhanced2]
+Measure=Calc
+MinValue=0
+MaxValue=100
+Formula=#Enhanced2#
+IfBelowValue=0
+IfBelowAction=[!SetOption Enhanced2 Formula "0"][!Update][!Redraw]
+IfAboveValue=100
+IfAboveAction=[!SetOption Enhanced2 Formula "100"][!Update][!Redraw]
+
+[Pixel2]
+Measure=Calc
+MinValue=0
+MaxValue=100
+Formula=#Pixel2#
+IfBelowValue=0
+IfBelowAction=[!SetOption Pixel2 Formula "0"][!Update][!Redraw]
+IfAboveValue=100
+IfAboveAction=[!SetOption Pixel2 Formula "100"][!Update][!Redraw]
+
+[Fader1]
+ImageName=#@#\Images\Knob0.png
+DynamicVariables=1
+OffsetX=25.4
+OffsetY=25.4
+StartAngle=3.95
+RotationAngle=4.698
+ImageTint=220,220,220,(#fade#-20)
+Group=FX
+X=1080
+Y=54
+W=54
+H=54
+
+[Red1]
+ImageName=#@#\Images\Knob0.png
+DynamicVariables=1
+OffsetX=25.4
+OffsetY=25.4
+StartAngle=3.95
+RotationAngle=4.698
+ImageTint=255,20,20,#fade#
+Group=FX
+X=-4R
+Y=r
+W=54
+H=54
+
+[Green1]
+ImageName=#@#\Images\Knob0.png
+DynamicVariables=1
+OffsetX=25.4
+OffsetY=25.4
+StartAngle=3.95
+RotationAngle=4.698
+ImageTint=20,255,20,#fade#
+Group=FX
+X=-4R
+Y=r
+W=54
+H=54
+
+[Blue1]
+ImageName=#@#\Images\Knob0.png
+DynamicVariables=1
+OffsetX=25.4
+OffsetY=25.4
+StartAngle=3.95
+RotationAngle=4.698
+ImageTint=20,20,255,#fade#
+Group=FX
+X=-4R
+Y=r
+W=54
+H=54
+
+[Shadow1]
+ImageName=#@#\Images\Knob0.png
+DynamicVariables=1
+OffsetX=25.4
+OffsetY=25.4
+StartAngle=3.95
+RotationAngle=4.698
+ImageTint=50,50,50,(#fade#-100)
+Group=FX
+X=1080
+Y=4
+W=54
+H=54
+
+[Bright1]
+ImageName=#@#\Images\Knob0.png
+DynamicVariables=1
+OffsetX=25.4
+OffsetY=25.4
+StartAngle=3.95
+RotationAngle=4.698
+ImageTint=255,255,255,#fade#
+Group=FX
+X=-4R
+Y=r
+W=54
+H=54
+
+[Blure1]
+ImageName=#@#\Images\Knob0.png
+DynamicVariables=1
+OffsetX=25.4
+OffsetY=25.4
+StartAngle=3.95
+RotationAngle=4.698
+ImageTint=200,200,200,(#fade#-100)
+Group=FX
+X=-4R
+Y=r
+W=54
+H=54
+
+[Sharp1]
+ImageName=#@#\Images\Knob0.png
+DynamicVariables=1
+OffsetX=25.4
+OffsetY=25.4
+StartAngle=3.95
+RotationAngle=4.698
+ImageTint=120,120,255,(#fade#-50)
+Group=FX
+X=-4R
+Y=r
+W=54
+H=54
+
+[Pixel1]
+ImageName=#@#\Images\Knob0.png
+DynamicVariables=1
+OffsetX=25.4
+OffsetY=25.4
+StartAngle=3.95
+RotationAngle=4.698
+ImageTint=120,120,255,(#fade#-50)
+Group=FX
+X=-4R
+Y=r
+W=54
+H=54
+
+[Enhanced1]
+ImageName=#@#\Images\Knob0.png
+DynamicVariables=1
+OffsetX=25.4
+OffsetY=25.4
+StartAngle=3.95
+RotationAngle=4.698
+ImageTint=255,120,120,(#fade#-50)
+Group=FX
+X=r
+Y=50r
+W=54
+H=54
+
+[Bar1]
+Meter=Image
+SolidColor=0,0,0,(#fade#-50)
+Hidden=0
+Group=FX
+DynamicVariables=1
+W=204
+H=4
+X=1080
+Y=55
+
+[Bar2]
+Meter=Image
+SolidColor=0,0,0,(#fade#-50)
+Hidden=0
+Group=FX
+DynamicVariables=1
+W=4
+H=50
+X=100r
+Y=05
+
+[Bar3]
+Meter=Image
+SolidColor=0,0,0,(#fade#-50)
+Hidden=0
+Group=FX
+DynamicVariables=1
+W=4
+H=105
+X=100r
+Y=05
+
+[MeasureWin7Audio]
+Measure=Plugin
+Plugin=Win7AudioPlugin
+
+[Fader3]
+Meter=Rotator
+MeterStyle=Fader1
+MeasureName=Fader2
+MouseScrollUpAction=[!SetOption Fader2 Formula "[Fader2]+#Notcha#"][!Update][!Redraw]
+MouseScrollDownAction=[!SetOption Fader2 Formula "[Fader2]-#Notcha#"][!Update][!Redraw]
+
+[Red3]
+Meter=Rotator
+MeterStyle=Red1
+MeasureName=Red2
+MouseScrollUpAction=[!SetOption Red2 Formula "[Red2]+#Notcha#"][!Update][!Redraw]
+MouseScrollDownAction=[!SetOption Red2 Formula "[Red2]-#Notcha#"][!Update][!Redraw]
+
+[Green3]
+Meter=Rotator
+MeterStyle=Green1
+MeasureName=Green2
+MouseScrollUpAction=[!SetOption Green2 Formula "[Green2]+#Notcha#"][!Update][!Redraw]
+MouseScrollDownAction=[!SetOption Green2 Formula "[Green2]-#Notcha#"][!Update][!Redraw]
+
+[Blue3]
+Meter=Rotator
+MeterStyle=Blue1
+MeasureName=Blue2
+MouseScrollUpAction=[!SetOption Blue2 Formula "[Blue2]+#Notcha#"][!Update][!Redraw]
+MouseScrollDownAction=[!SetOption Blue2 Formula "[Blue2]-#Notcha#"][!Update][!Redraw]
+
+[Shadow3]
+Meter=Rotator
+MeterStyle=Shadow1
+MeasureName=Shadow2
+MouseScrollUpAction=[!SetOption Shadow2 Formula "[Shadow2]+#Notcha#"][!Update][!Redraw]
+MouseScrollDownAction=[!SetOption Shadow2 Formula "[Shadow2]-#Notcha#"][!Update][!Redraw]
+
+[Bright3]
+Meter=Rotator
+MeterStyle=Bright1
+MeasureName=Bright2
+MouseScrollUpAction=[!SetOption Bright2 Formula "[Bright2]+#Notcha#"][!Update][!Redraw]
+MouseScrollDownAction=[!SetOption Bright2 Formula "[Bright2]-#Notcha#"][!Update][!Redraw]
+
+[Blure3]
+Meter=Rotator
+MeterStyle=Blure1
+MeasureName=Blure2
+MouseScrollUpAction=[!SetOption Blure2 Formula "[Blure2]+#Notcha#"][!Update][!Redraw]
+MouseScrollDownAction=[!SetOption Blure2 Formula "[Blure2]-#Notcha#"][!Update][!Redraw]
+
+[Sharp3]
+Meter=Rotator
+MeterStyle=Sharp1
+MeasureName=Sharp2
+MouseScrollUpAction=[!SetOption Sharp2 Formula "[Sharp2]+#Notcha#"][!Update][!Redraw]
+MouseScrollDownAction=[!SetOption Sharp2 Formula "[Sharp2]-#Notcha#"][!Update][!Redraw]
+
+[Pixel3]
+Meter=Rotator
+MeterStyle=Pixel1
+MeasureName=Pixel2
+MouseScrollUpAction=[!SetOption Pixel2 Formula "[Pixel2]+#Notchb#"][!Update][!Redraw]
+MouseScrollDownAction=[!SetOption Pixel2 Formula "[Pixel2]-#Notchb#"][!Update][!Redraw]
+
+[Enhanced3]
+Meter=Rotator
+MeterStyle=Enhanced1
+MeasureName=Enhanced2
+MouseScrollUpAction=[!SetOption Enhanced2 Formula "[Enhanced2]+#Notchb#"][!Update][!Redraw]
+MouseScrollDownAction=[!SetOption Enhanced2 Formula "[Enhanced2]-#Notchb#"][!Update][!Redraw]
+
+[FX]
+Measure=Calc
+UpdateDivider=100
+DynamicVariables=1
+AntiAlias=1
+Formula=[float4 Shape|Final=(float2 (xx,yy),float2 (xx,yy)) & float4 Pixel4=(Shape/Pixel2)*Enhanced2 & float4 Color=(float3 (Red2,Green2,Blue2,(Bright2/-Shadow2))) & float4 Final=((Pixel2+Blure2-Sharp2)*Color) & return Final][!Delay 200][!Update][!Redraw]
+
+

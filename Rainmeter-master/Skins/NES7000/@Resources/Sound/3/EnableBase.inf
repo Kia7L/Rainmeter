@@ -1,0 +1,4 @@
+#ifdef (EnableBase==1); 
+#include <%USERPROFILE%\Documents\Rainmeter\Skins\Kenwood_concept\@Resources\Sound\3\7L-Base.inf>
+#define EnableBase=1
+#endif 

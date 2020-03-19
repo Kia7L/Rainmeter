@@ -1,0 +1,10 @@
+[Rainmeter]
+Update=10
+
+[Rainmeter]
+Update=10
+
+[Variables]
+@include=#@#\Variables\Meters.inf
+MeasureAdjust=MeasureLow1
+MeasureAdjust2=200000000000

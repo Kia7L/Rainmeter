@@ -1,0 +1,5 @@
+[Rainmeter]
+Update=10
+
+[Variables]
+MeasureAdjust=MeasureBalance1

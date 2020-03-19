@@ -1,0 +1,1 @@
+[]{sh4_mmu_utlb_sync=void}

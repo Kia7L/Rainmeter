@@ -1,0 +1,7 @@
+float4 EnhancedMax
+[]{
+EnhancedFormula=10000
+Complexity=1000
+float4 (EnhancedMax)*Complexity=(float 2((0[1])-EnhancedFormula/0xFF/0x0F/+1/-1/0/0x00),float 2((1[0])-EnhancedFormula/0xFF/0x0F/+1/-1/0/0x00))
+return EnhancedMax
+}

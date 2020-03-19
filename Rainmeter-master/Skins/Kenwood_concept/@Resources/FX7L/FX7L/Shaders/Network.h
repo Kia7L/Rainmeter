@@ -1,0 +1,6 @@
+[NETWORKADDRESS:]
+float evo=(1<->99999999999999999999999999999999999999),(0x00,)*2.1;
+float k=1==A,2==B,3==C,4==D
+float k=1<->4==k<=(4),(0x00,)*2.2;
+float NETWORKADDRESS=(k k : k k) : (evo)
+RETURN NETWORKADDRESS

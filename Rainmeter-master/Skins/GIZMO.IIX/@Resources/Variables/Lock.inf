@@ -1,0 +1,188 @@
+[Rainmeter]
+Update=1
+OnRefreshAction=[]
+MouseActionCursorName=nes.ani
+
+[Variables]
+@include=#@#\variables\FX.inf
+Nir=#@#\nircmd.exe
+Notch1=1
+fade=255
+PassCode1=6
+PassCode2=4
+PassCode3=7
+MAX=10
+SayHello="Why,,There,,Howdy,,Partner.."
+
+[BGA]
+Meter=Image
+MeterStyle=BG_Variables
+ImageName=#@#\Images\Background.png
+ClickThrouSetting=1
+X=(#xxx#+#xxx#+#xxx#+#xxx#)
+Y=0
+W=215
+H=114
+LeftMouseUpAction=[!HideMeterGroup Synth][!HideMeterGroup Lock1][!Update][!Redraw]
+Hidden=0
+Group=Lock1
+
+[BGB]
+Meter=Image
+MeterStyle=BG_Variables
+ImageName=#@#\Images\Background.png
+ClickThrouSetting=1
+X=(#xxx#+#xxx#+#xxx#+#xxx#+#xxx#)
+Y=0
+W=265
+H=114
+LeftMouseUpAction=[!HideMeterGroup FX][!HideMeterGroup Lock2][!Update][!Redraw]
+Hidden=0
+Group=Lock2
+
+[Measure00]
+Measure=Calc
+Formula=0
+MinValue=0
+MaxValue=10
+IfBelowValue=0
+IfBelowAction=[!SetOption Measure00 Formula "10"][!Update][!Redraw]
+IfAboveValue=10
+IfAboveAction=[!SetOption Measure00 Formula "0"][!HideMeterGroup Locka][!ShowMeter A0][!Update][!Redraw]
+IfEqualValue=9
+IfEqualAction=[!HideMeterGroup Locka][!ShowMeter A1][!Update][!Redraw]
+
+[Measure01]
+Measure=Calc
+Formula=0
+MinValue=0
+MaxValue=10
+IfBelowValue=0
+IfBelowAction=[!SetOption Measure01 Formula "10"][!Update][!Redraw]
+IfAboveValue=7
+IfAboveAction=[!SetOption Measure00 Formula "7"][!HideMeterGroup Locka][!ShowMeter A0][!Update][!Redraw]
+IfEqualValue=6
+IfEqualAction=[!HideMeterGroup Locka][!ShowMeter A2][!Update][!Redraw]
+
+[Measure02]
+Measure=Calc
+Formula=6
+MinValue=0
+MaxValue=10
+IfBelowValue=3
+IfBelowAction=[!SetOption Measure01 Formula "3"][!HideMeterGroup Locka][!ShowMeter A0][!Update][!Redraw]
+IfAboveValue=10
+IfAboveAction=[!Refresh]
+IfEqualValue=4
+IfEqualAction=[!HideMeterGroup Locka][!ShowMeter A3][!Update][!Redraw]
+
+[Measure03]
+Measure=Calc
+Formula=4
+MinValue=0
+MaxValue=10
+IfBelowValue=0
+IfBelowAction=[!SetOption Measure01 Formula "10"][!HideMeterGroup Locka][!ShowMeter A0][!Update][!Redraw]
+IfAboveValue=10
+IfAboveAction=[!Refresh]
+IfEqualValue=9
+IfEqualAction=[!HideMeterGroup Locka][!HideMeterGroup Lock1][!HideMeterGroup Lock2][C:\Windows\nircmd.exe speak text "#SAYHELLO#"][!Delay 2000][!Update][!Redraw]
+
+[StyleBG]
+ImageName=#@#\Images\Knob1.png
+OffsetX=24.5
+OffsetY=24.5
+StartAngle=9.39
+RotationAngle=6.3
+Hidden=0
+ImageTint=80,80,80,#fade#
+Group=Locka
+X=(#xxx#+#xxx#+#xxx#+#xxx#+21)
+Y=51
+W=53
+H=53
+
+[Style0]
+ImageName=#@#\Images\Knob0.png
+OffsetX=24.5
+OffsetY=24.5
+StartAngle=9.39
+RotationAngle=6.3
+Hidden=0
+ImageTint=80,80,80,#fade#
+Group=Locka
+X=(#xxx#+#xxx#+#xxx#+#xxx#+20)
+Y=50
+W=54
+H=54
+
+[Style1]
+ImageName=#@#\Images\Knob0.png
+OffsetX=24.5
+OffsetY=24.5
+StartAngle=9.39
+RotationAngle=6.3
+Hidden=1
+ImageTint=80,80,80,#fade#
+Group=Locka
+X=r
+Y=r
+W=54
+H=54
+
+[Style2]
+ImageName=#@#\Images\Knob0.png
+OffsetX=24.5
+OffsetY=24.5
+StartAngle=9.39
+RotationAngle=6.3
+Hidden=1
+ImageTint=80,80,80,#fade#
+Group=Locka
+X=r
+Y=r
+W=54
+H=54
+
+[Style3]
+ImageName=#@#\Images\Knob0.png
+OffsetX=24.5
+OffsetY=24.5
+StartAngle=9.39
+RotationAngle=6.3
+Hidden=1
+ImageTint=80,80,80,#fade#
+Group=Locka
+X=r
+Y=r
+W=54
+H=54
+
+[A0]
+Meter=Rotator
+MeterStyle=Style0
+MeasureName=Measure00
+MouseScrollUpAction=[!SetOption Measure00 Formula "[Measure00]+1"][!Update][!Redraw]
+MouseScrollDownAction=[!SetOption Measure00 Formula "[Measure00]-1"][!Update][!Redraw]
+
+[A1]
+Meter=Rotator
+MeterStyle=Style1
+MeasureName=Measure01
+MouseScrollUpAction=[!SetOption Measure01 Formula "[Measure01]+1"][!Update][!Redraw]
+MouseScrollDownAction=[!SetOption Measure01 Formula "[Measure01]-1"][!Update][!Redraw]
+
+[A2]
+Meter=Rotator
+MeterStyle=Style2
+MeasureName=Measure02
+MouseScrollUpAction=[!SetOption Measure02 Formula "[Measure02]+1"][!Update][!Redraw]
+MouseScrollDownAction=[!SetOption Measure02 Formula "[Measure02]-1"][!Update][!Redraw]
+
+[A3]
+Meter=Rotator
+MeterStyle=Style3
+MeasureName=Measure03
+MouseScrollUpAction=[!SetOption Measure03 Formula "[Measure03]+1"][!Update][!Redraw]
+MouseScrollDownAction=[!SetOption Measure03 Formula "[Measure03]-1"][!Update][!Redraw]
+

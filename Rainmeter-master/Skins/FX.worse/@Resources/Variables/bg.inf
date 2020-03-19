@@ -1,0 +1,36 @@
+[Rainmeter]
+Update=10
+MouseActionCursorName=nes.ani
+
+[Variables]
+;;@include=#@#\Variables\Text.inf
+
+[BackGround]
+Meter=Image
+MeterStyle=BG_Variables
+ImageName=#@#\Images\Background.EQ.png
+SolidColor=255,255,255,255
+LeftMouseUpAction=[!ToggleMeterGroup Synth]
+MouseScrollUpAction=[!SetVariable Intenna1 "[IntennaMeasure]-10"][!SetOption IntennaMeasure Formula "[IntennaMeasure]-10"][!Update][!Redraw]
+MouseScrollDownAction=[!SetVariable Intenna1 "[IntennaMeasure]+10"][!SetOption IntennaMeasure Formula "[IntennaMeasure]+10"][!Update][!Redraw]
+DynamicVariables=1
+Hidden=1
+Group=Synth
+X=860
+Y=0
+W=212
+H=114
+
+[TECHNICS]
+Meter=Image
+ImageName=#@#\Images\Technics.png
+ImageTint=250,250,50,(#fade#)+(#fade#)
+DynamicVariables=1
+AntiAlias=1
+ImageRotate=-24
+Hidden=1
+Group=Synth
+X=864
+Y=2
+W=56
+H=56

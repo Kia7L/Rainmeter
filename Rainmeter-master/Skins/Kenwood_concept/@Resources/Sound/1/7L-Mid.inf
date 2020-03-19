@@ -1,0 +1,9 @@
+[]{
+Bitrate=(<LowBase><(30,60,80)><HighBase><LowMiddle><(112,200,220)><HighMiddle><(400,500,1000,1240)><High>)>MAX1;
+LowBase=600
+HighBase=400
+LowMiddle=1000
+HighMiddle=1500
+High=5
+MAX1=10000
+} 

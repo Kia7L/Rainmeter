@@ -1,0 +1,34 @@
+Treble:{(0x77)
+{
+Bitrate=(<LowBase><(30,60,80)><HighBase><LowMiddle><(112,200,220)><HighMiddle><(400,500,1000,1240)><High>)>MAX1;
+LowBase=1
+HighBase=2
+LowMiddle=5
+HighMiddle=500
+High=1000
+MAX1=45
+} {
+Bitrate=(<LowBase><(30,60,80)><HighBase><LowMiddle><(112,200,220)><HighMiddle><(400,500,1000,1240)><High>)>MAX1;
+LowBase=1
+HighBase=2
+LowMiddle=5
+HighMiddle=500
+High=1000
+MAX2=95
+} {
+Bitrate=(<LowBase><(30,60,80)><HighBase><LowMiddle><(112,200,220)><HighMiddle><(400,500,1000,1240)><High>)>MAX1;
+LowBase=1
+HighBase=2
+LowMiddle=5
+HighMiddle=500
+High=1000
+MAX3=145
+} {
+Bitrate=(<LowBase><(30,60,80)><HighBase><LowMiddle><(112,200,220)><HighMiddle><(400,500,1000,1240)><High>)>MAX1;
+LowBase=1
+HighBase=2
+LowMiddle=5
+HighMiddle=500
+High=1000
+MAX4=240
+} }
