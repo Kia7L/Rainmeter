@@ -1,9 +1,12 @@
 [Rainmeter]
 Update=10 
+DynamicSize=1
+DynamicVariables=1
+AntiAlias=1
 
 [Variables]
+ColorFrame=10,10,10,255
 PictureFolder="#@#\Photos\"
-FrameColor=10,10,140,255
 
 [BG_Variables]
 ImageTint=255,225,200
@@ -31,9 +34,10 @@ Meter=Image
 MeasureName=MeasurePicture
 MeterStyle=BG_Variables
 ImageName=#PictureFolder#\%1.jpg
-X=75
+ImageAlpha=255
+X=100
 Y=65
-W=(#SCREENAREAWIDTH#-137)
+W=(#SCREENAREAWIDTH#-200)
 H=(#SCREENAREAHEIGHT#-129)
 Hidden=0
 LeftMouseUpAction=[!SetOption MeasurePicture Formula "[MeasurePicture]+1"][!Update][!Redraw]
@@ -43,7 +47,7 @@ RightMouseUpAction=[!SetOption MeasurePicture Formula "[MeasurePicture]-1"][!Upd
 Meter=Image
 MeterStyle=BG_Variables
 ImageName=#@#\Images\Frame.png
-ImageTint=#FrameColor#
+ImageTint=#ColorFrame#
 X=0
 Y=0
 W=#SCREENAREAWIDTH#
@@ -51,6 +55,8 @@ H=#SCREENAREAHEIGHT#
 Hidden=0
 LeftMouseUpAction=[!SetOption MeasurePicture Formula "[MeasurePicture]+1"][!Update][!Redraw]
 RightMouseUpAction=[!SetOption MeasurePicture Formula "[MeasurePicture]-1"][!Update][!Redraw]
+DynamicVariable=1
+AntiAlias=1
 
 [BG-SQUARE]
 Meter=Image
@@ -62,3 +68,73 @@ W=215
 H=114
 LeftMouseUpAction=[!Refresh][!Update][!Redraw]
 Hidden=0
+
+;-------------------------------------------------
+;Knob
+;-------------------------------------------------
+
+[Knob]
+ImageName=#@#\Images\Knob0.png
+DynamicVariable=1
+OffsetX=25.4
+OffsetY=25.4
+StartAngle=3.95
+RotationAngle=4.698
+ImageTint=120,120,120,255
+Group=Synth
+X=5
+Y=55
+W=54
+H=54
+
+[MeterKnob]
+Meter=Rotator
+MeterStyle=Knob
+MeasureName=MeasureKnob
+MouseScrollUpAction=[!SetOption MeasureKnob Formula "[MeasureKnob]+1"][!Update][!Redraw]
+MouseScrollDownAction=[!SetOption MeasureKnob Formula "[MeasureKnob]-1"][!Update][!Redraw]
+Hidden=0
+Group=Synth
+AntiAlias=1
+DynamicVariables=1
+
+;--------------------------------------------------------------------
+[MeasureKnob]
+Measure=Calc
+MinValue=1
+MaxValue=16
+Formula=2
+IfCondition=MeasureKnob=1
+IfTrueAction=[!SetOption FRAME ImageTint "10,10,10,55"][!SetOption Picture ImageAlpha "55"][!Update][!Redraw]
+IfCondition2=MeasureKnob=2
+IfTrueAction2=[!SetOption FRAME ImageTint "10,10,10,255"][!SetOption Picture ImageAlpha "255"][!Update][!Redraw]
+IfCondition3=MeasureKnob=3
+IfTrueAction3=[!SetOption FRAME ImageTint "90,90,90,255"][!Update][!Redraw]
+IfCondition4=MeasureKnob=4
+IfTrueAction4=[!SetOption FRAME ImageTint "110,110,110,255"][!Update][!Redraw]
+IfCondition5=MeasureKnob=5
+IfTrueAction5=[!SetOption FRAME ImageTint "150,150,150,255"][!Update][!Redraw]
+IfCondition6=MeasureKnob=6
+IfTrueAction6=[!SetOption FRAME ImageTint "190,190,190,255"][!Update][!Redraw]
+IfCondition7=MeasureKnob=7
+IfTrueAction7=[!SetOption FRAME ImageTint "210,210,210,255"][!Update][!Redraw]
+IfCondition8=MeasureKnob=8
+IfTrueAction8=[!SetOption FRAME ImageTint "220,220,220,255"][!Update][!Redraw]
+IfCondition9=MeasureKnob=9
+IfTrueAction9=[!SetOption FRAME ImageTint "255,255,255,255"][!Update][!Redraw]
+IfCondition10=MeasureKnob=10
+IfTrueAction10=[!SetOption FRAME ImageTint "255,255,10,255"][!Update][!Redraw]
+IfCondition11=MeasureKnob=11
+IfTrueAction11=[!SetOption FRAME ImageTint "255,100,10,255"][!Update][!Redraw]
+IfCondition12=MeasureKnob=12
+IfTrueAction12=[!SetOption FRAME ImageTint "255,50,0,255"][!Update][!Redraw]
+IfCondition13=MeasureKnob=13
+IfTrueAction13=[!SetOption FRAME ImageTint "200,10,0,255"][!Update][!Redraw]
+IfCondition14=MeasureKnob=14
+IfTrueAction14=[!SetOption FRAME ImageTint "150,10,0,255"][!Update][!Redraw]
+IfCondition15=MeasureKnob=15
+IfTrueAction15=[!SetOption FRAME ImageTint "155,0,0,255"][!Update][!Redraw]
+IfCondition16=MeasureKnob=16
+IfTrueAction16=[!SetOption FRAME ImageTint "185,0,0,255"][!Update][!Redraw]
+DynamicVariable=1
+AntiAlias=1
