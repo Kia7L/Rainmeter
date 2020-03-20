@@ -1,8 +1,9 @@
-@cd \
-@echo off
-@mode con: cols=55 lines=5
-@color 01
-@title "Steam7L"
+cd \
+echo off
+mode con: cols=20 lines=4
+color 01
+title "RUN"
+cls
 
 :Variables
 set "Rain="C:\Program File\Rainmeter\Rainmeter.exe""
@@ -12,12 +13,12 @@ set "cec=%UserProfile%\Documents\Rainmeter\Skins\GIZMO.IIX\@Resources\Programs\c
 
 :Dementions
 set "xx=5"  
-set "yy=5"  
-set "Width=450"  
-set "Hieght=170"
+set "yy=120"  
+set "Width=175"  
+set "Hieght=110"
 
 :Posistion
-%nir% win setsize ititle "Steam7L" %xx% %yy% %Width% %Hieght%
+%nir% win setsize ititle "RUN" %xx% %yy% %Width% %Hieght%
 
 :Run_All_Steam
 (
@@ -52,10 +53,14 @@ set "Hieght=170"
 	"X:\Steam\Steam.exe"
 	"Y:\Steam\Steam.exe"
 	"Z:\Steam\Steam.exe"
-)
+) > NUL
+
+:STEAM
+%nir% win setsize ititle "Steam" 0 650 1000 400
+
 :Exit_Code
 cls
 %cec%{04}BY {01}Kia7L... {\n}
 %cec%{09} Steam Powered... {\n}
-timeout /t 5 > NUL
-exit > NUL
+(timeout /t 3) > NUL
+exit 

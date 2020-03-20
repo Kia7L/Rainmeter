@@ -3,5 +3,5 @@ Update=10
 
 [Variables]
 @include=#@#\Variables\Meters.inf
-MeasureAdjust=MeasureHigh2
-MeasureAdjust2=200000000000
+MeasureAdjust=VOL
+MeasureAdjust2=2
