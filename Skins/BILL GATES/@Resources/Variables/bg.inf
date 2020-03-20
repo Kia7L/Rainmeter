@@ -3,6 +3,7 @@ Update=10
 
 [Variables]
 PictureFolder="#@#\Photos\"
+FrameColor=10,10,140,255
 
 [BG_Variables]
 ImageTint=255,225,200
@@ -16,6 +17,8 @@ Measure=Calc
 MinValue=1
 MaxValue=4
 Formula=1
+IfBelowValue=1
+IfBelowAction=[!SetOption MeasurePicture Formula "4"][!Update][!Redraw]
 IfAboveValue=4
 IfAboveAction=[!SetOption MeasurePicture Formula "1"][!Update][!Redraw]
 
@@ -33,19 +36,21 @@ Y=65
 W=(#SCREENAREAWIDTH#-137)
 H=(#SCREENAREAHEIGHT#-129)
 Hidden=0
-LeftMouseUpAction=[!SetOption MeasurePicture Formula "1"][!Update][!Redraw]
-RightMouseUpAction=[!SetOption MeasurePicture Formula "2"][!Update][!Redraw]
+LeftMouseUpAction=[!SetOption MeasurePicture Formula "[MeasurePicture]+1"][!Update][!Redraw]
+RightMouseUpAction=[!SetOption MeasurePicture Formula "[MeasurePicture]-1"][!Update][!Redraw]
 
 [FRAME]
 Meter=Image
 MeterStyle=BG_Variables
 ImageName=#@#\Images\Frame.png
-ImageTint=10,10,240,255
+ImageTint=#FrameColor#
 X=0
 Y=0
 W=#SCREENAREAWIDTH#
 H=#SCREENAREAHEIGHT#
 Hidden=0
+LeftMouseUpAction=[!SetOption MeasurePicture Formula "[MeasurePicture]+1"][!Update][!Redraw]
+RightMouseUpAction=[!SetOption MeasurePicture Formula "[MeasurePicture]-1"][!Update][!Redraw]
 
 [BG-SQUARE]
 Meter=Image
