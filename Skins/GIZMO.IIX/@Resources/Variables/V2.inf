@@ -1,10 +1,7 @@
 [Rainmeter]
 Update=10
 
-[Rainmeter]
-Update=10
-
 [Variables]
 @include=#@#\Variables\Meters.inf
-MeasureAdjust=FADER
-MeasureAdjust2=10
+MeasureAdjust=MeasureHigh2
+MeasureAdjust2=200000000000

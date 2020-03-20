@@ -233,6 +233,20 @@ MinValue=390
 MaxValue=600
 Formula=400
 
+[Volume2]
+ImageName=#@#\Images\Knob0.png
+DynamicVariable=1
+OffsetX=25.4
+OffsetY=25.4
+StartAngle=3.95
+RotationAngle=4.698
+ImageTint=180,180,180,#fade#
+Group=Synth
+X=10
+Y=60
+W=54
+H=54
+
 [Balance2]
 ImageName=#@#\Images\Knob0.png
 DynamicVariable=1
@@ -243,11 +257,11 @@ RotationAngle=4.698
 ImageTint=120,120,120,#fade#
 Group=Synth
 X=867
-Y=(47+#Yup#)
+Y=55
 W=54
 H=54
 
-[Volume]
+[Volume1]
 ImageName=#@#\Images\Knob0.png
 DynamicVariable=1
 OffsetX=25.4
@@ -256,7 +270,7 @@ StartAngle=3.95
 RotationAngle=4.698
 ImageTint=180,180,180,#fade#
 Group=Synth
-X=50r
+X=917
 Y=r
 W=54
 H=54
@@ -270,22 +284,22 @@ StartAngle=3.95
 RotationAngle=4.698
 ImageTint=120,120,120,#fade#
 Group=Synth
-X=50r
-Y=r
+X=(917+50)
+Y=55
 W=54
 H=54
 
-[Mid-Treble]
+[Treble]
 ImageName=#@#\Images\Knob0.png
 DynamicVariable=1
 OffsetX=25.4
 OffsetY=25.4
 StartAngle=3.95
 RotationAngle=4.698
-ImageTint=150,150,150,#fade#
+ImageTint=120,120,120,#fade#
 Group=Synth
-X=50r
-Y=r
+X=(917+50+50)
+Y=55
 W=54
 H=54
 
@@ -355,10 +369,6 @@ Y=(44)
 W=20
 H=20
 
-[MeasureWin7Audio]
-Measure=Plugin
-Plugin=Win7AudioPlugin
-
 [MeterTransition]
 Meter=Rotator
 MeterStyle=Transition2
@@ -414,13 +424,24 @@ Hidden=0
 Group=Synth
 AntiAlias=1
 
-[MeterVolume]
+[MeterVolume1]
 Meter=Rotator
-MeterStyle=Volume
-MeasureName=MeasureWin7Audio
+MeterStyle=Volume1
+MeasureName=AudioLevel
 LeftMouseUpAction=["#@#\Variables\5.exe"][!CommandMeasure MeasureRun5 "Run"][!Delay 700][!Refresh]
-MouseScrollUpAction=[!CommandMeasure "MeasureWin7Audio" "ChangeVolume +2"][!CommandMeasure "VOL" "[VOL]+2"][!Update][!Redraw]
-MouseScrollDownAction=[!CommandMeasure "MeasureWin7Audio" "ChangeVolume -2"][!CommandMeasure "VOL" "[VOL]+2"][!Update][!Redraw]
+MouseScrollUpAction=[!CommandMeasure "MeasureWin7Audio" "ChangeVolume +2"][!Update][!Redraw]
+MouseScrollDownAction=[!CommandMeasure "MeasureWin7Audio" "ChangeVolume -2"][!Update][!Redraw]
+Hidden=0
+Group=Synth
+AntiAlias=1
+
+[MeterVolume2]
+Meter=Rotator
+MeterStyle=Volume2
+MeasureName=VOL
+LeftMouseUpAction=["#@#\Variables\5.exe"][!CommandMeasure MeasureRun5 "Run"][!Delay 700][!Refresh]
+MouseScrollUpAction=[!SetOption VOL Formula "[VOL]+0.5"][!Update][!Redraw]
+MouseScrollDownAction=[!SetOption VOL Formula "[VOL]-0.5"][!Update][!Redraw]
 Hidden=0
 Group=Synth
 AntiAlias=1
@@ -438,7 +459,7 @@ AntiAlias=1
 
 [MeterTwoTwenty2]
 Meter=Rotator
-MeterStyle=Mid-Treble
+MeterStyle=Treble
 MeasureName=MeasureTwoTwenty2
 LeftMouseUpAction=["#@#\Variables\7.exe"][!CommandMeasure MeasureRun7 "Run"][!Delay 700][!Refresh]
 MouseScrollUpAction=[!SetOption MeasureTwoTwenty2 Formula "[MeasureTwoTwenty2]+10"][!Update][!Redraw]

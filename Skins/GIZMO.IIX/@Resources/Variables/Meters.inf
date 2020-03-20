@@ -158,21 +158,28 @@ Hidden=0
 ;;Sound-
 ;;--------------------------------
 [AudioLevel]
-plugin=Win7AudioPlugin
+Measure=Plugin
+Plugin=Win7AudioPlugin
+
+[VOL]
+Measure=Calc
+MinValue=1
+MaxValue=5
+Formula=5
 
 [measureAudioL]
 Measure=Plugin
 Plugin=AudioLevel
-RMSGain=#GAIN#
 Channel=0
 Type=RMS
+RMSGain=([VOL]3)
 
 [measureAudioR]
 Measure=Plugin
 Plugin=AudioLevel
-RMSGain=#GAIN#
 Channel=1
 Type=RMS
+RMSGain=([VOL]3)
 
 [meterBarSound1L]
 Meter=Histogram

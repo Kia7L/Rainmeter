@@ -1,9 +1,6 @@
 [Rainmeter]
 Update=10
 
-[Rainmeter]
-Update=10
-
 [Variables]
 @include=#@#\Variables\Meters.inf
 MeasureAdjust=MeasureBalance1
